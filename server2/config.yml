@@ -1,0 +1,79 @@
+# Configuration for IoT Anomaly Detection System
+
+# Paths
+paths:
+  data_dir: data
+  models_dir: models
+  logs_dir: logs
+
+# Database
+database:
+  path: data/iot_anomaly.db
+  type: sqlite
+
+# Anomaly Detection
+anomaly_detection:
+  # Default model to use (isolation_forest, lof, or both)
+  default_model: both
+  
+  # Default threshold for anomaly detection (higher = more strict)
+  default_threshold: 0.7
+  
+  # Expected proportion of anomalies in training data
+  contamination: 0.1
+  
+  # Isolation Forest parameters
+  isolation_forest:
+    n_estimators: 100
+    max_samples: auto
+    random_state: 42
+  
+  # Local Outlier Factor parameters
+  lof:
+    n_neighbors: 20
+    novelty: true
+
+# API
+api:
+  host: 0.0.0.0
+  port: 5000
+  debug: false
+  
+  # CORS settings
+  cors:
+    enabled: true
+    origins: "*"
+
+# Authentication
+auth:
+  # Secret key for JWT token signing (should be changed in production)
+  secret_key: "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
+  
+  # JWT algorithm
+  algorithm: "HS256"
+  
+  # Access token expiration time in minutes
+  access_token_expire_minutes: 30
+  
+  # Enable/disable authentication for API endpoints
+  enabled: true
+  
+  # Endpoints that don't require authentication
+  public_endpoints:
+    - "/api/v1/auth/token"
+    - "/docs"
+    - "/redoc"
+    - "/openapi.json"
+    - "/"
+  
+  # Default admin user (for development only, should be removed in production)
+  default_admin:
+    username: "admin"
+    password: "Admin123!"
+    email: "admin@example.com"
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: logs/anomaly_detection.log
