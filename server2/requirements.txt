@@ -13,4 +13,4 @@ pyyaml>=6.0
 apscheduler>=3.10.1
 python-jose[cryptography]>=3.3.0
 passlib[bcrypt]>=1.7.4
-paho-mqtt>=2.2.1
+paho-mqtt==2.1.0
