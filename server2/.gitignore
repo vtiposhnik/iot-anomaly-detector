@@ -1,0 +1,8 @@
+
+# Python specific (since you have a .venv directory)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+python-version
