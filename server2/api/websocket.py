@@ -1,5 +1,7 @@
 from typing import List
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query, status
+from jose import jwt, JWTError
+from api.auth.utils import SECRET_KEY, ALGORITHM
 import asyncio
 from utils.database import get_anomalies, get_traffic
 from utils.logger import get_logger
@@ -31,7 +33,17 @@ class ConnectionManager:
 manager = ConnectionManager()
 
 @router.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
+async def websocket_endpoint(websocket: WebSocket, token: str = Query(None)):
+    # Authenticate using JWT token passed via query parameter
+    if not token:
+        await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
+        return
+    try:
+        jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except JWTError:
+        await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
+        return
+
     await manager.connect(websocket)
     last_anomaly_id = None
     try:
