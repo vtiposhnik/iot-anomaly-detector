@@ -1,3 +1,5 @@
+import authService from './authService';
+
 class SocketService {
   private ws: WebSocket | null = null;
   private listeners: Map<string, Set<(data: any) => void>> = new Map();
@@ -5,7 +7,12 @@ class SocketService {
   connect() {
     if (this.ws && this.ws.readyState === WebSocket.OPEN) return;
 
-    this.ws = new WebSocket('ws://localhost:5000/ws');
+    const token = authService.getToken();
+    const url = token
+      ? `ws://localhost:5000/ws?token=${encodeURIComponent(token)}`
+      : 'ws://localhost:5000/ws';
+
+    this.ws = new WebSocket(url);
 
     this.ws.onopen = () => {
       console.log('WebSocket connected');
@@ -25,6 +32,10 @@ class SocketService {
     this.ws.onclose = () => {
       console.log('WebSocket disconnected');
       this.ws = null;
+    };
+
+    this.ws.onerror = (err) => {
+      console.error('WebSocket error', err);
     };
   }
 
