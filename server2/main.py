@@ -24,6 +24,7 @@ from api.models import ErrorResponse
 from api.alerts_routes import router as alerts_router
 from api.statistics_routes import router as statistics_router
 from api.model_routes import router as model_router
+from api.websocket import router as websocket_router
 
 # Setup logging
 logger = setup_logger()
@@ -82,6 +83,7 @@ app.include_router(scheduler_router, prefix="/api/v1")
 app.include_router(alerts_router, prefix="/api/v1")
 app.include_router(statistics_router, prefix="/api/v1")
 app.include_router(model_router, prefix="/api/v1")
+app.include_router(websocket_router)
 
 # Define Pydantic models for request/response validation
 class Device(BaseModel):

@@ -130,12 +130,14 @@ class AuthMiddleware(BaseHTTPMiddleware):
             Token if found, None otherwise
         """
         auth_header = request.headers.get("Authorization")
-        if not auth_header:
-            return None
-        
-        # Check if it's a Bearer token
-        parts = auth_header.split()
-        if len(parts) != 2 or parts[0].lower() != "bearer":
-            return None
-        
-        return parts[1]
+        if auth_header:
+            parts = auth_header.split()
+            if len(parts) == 2 and parts[0].lower() == "bearer":
+                return parts[1]
+
+        # Fallback to "token" query parameter (useful for WebSocket connections)
+        token_param = request.query_params.get("token")
+        if token_param:
+            return token_param
+
+        return None
