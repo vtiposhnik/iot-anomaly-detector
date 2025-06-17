@@ -11,13 +11,8 @@ import time
 import random
 import logging
 from datetime import datetime
-import os
-import sys
-
-# Add parent directory to path to import config
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from device_simulator.config import (
-    MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USERNAME, 
+from config import (
+    MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USERNAME,
     MQTT_PASSWORD, MQTT_QOS, DATASET_PATH,
     DEFAULT_INTERVAL, DEFAULT_RECORDS_PER_DEVICE, GLOBAL_INTERVAL,
     LOG_LEVEL
