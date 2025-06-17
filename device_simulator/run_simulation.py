@@ -9,11 +9,11 @@ import logging
 import sys
 import os
 
-# Add parent directory to path to import config
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from device_simulator.device_simulator import IoTDeviceSimulator
-from device_simulator.config import (
-    MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USERNAME, 
+# Add current directory to path for module imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from device_simulator import IoTDeviceSimulator
+from config import (
+    MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USERNAME,
     MQTT_PASSWORD, MQTT_QOS, DATASET_PATH,
     DEFAULT_INTERVAL, DEFAULT_RECORDS_PER_DEVICE, GLOBAL_INTERVAL,
     LOG_LEVEL

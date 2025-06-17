@@ -4,6 +4,7 @@ Configuration for the IoT Device Simulator
 This module provides configuration settings for the IoT device simulator.
 """
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Load environment variables from .env file if present
@@ -17,7 +18,11 @@ MQTT_PASSWORD = os.getenv('MQTT_PASSWORD', None)
 MQTT_QOS = int(os.getenv('MQTT_QOS', 0))
 
 # Dataset Configuration
-DATASET_PATH = os.getenv('DATASET_PATH', '../server2/data/processed/traffic.csv')
+BASE_DIR = Path(__file__).resolve().parent
+DATASET_PATH = os.getenv(
+    'DATASET_PATH',
+    str((BASE_DIR.parent / 'server2' / 'data' / 'processed' / 'traffic.csv').resolve())
+)
 
 # Simulation Configuration
 DEFAULT_INTERVAL = float(os.getenv('DEFAULT_INTERVAL', 1.0))
