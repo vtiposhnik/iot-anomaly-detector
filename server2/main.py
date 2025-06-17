@@ -4,8 +4,9 @@ IoT Anomaly Detection System - FastAPI Application
 This is the main entry point for the FastAPI-based backend of the IoT monitoring application.
 """
 import os
+import asyncio
 from typing import List, Dict, Any, Optional
-from fastapi import FastAPI, HTTPException, Query, Depends, BackgroundTasks
+from fastapi import FastAPI, HTTPException, Query, Depends, BackgroundTasks, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from datetime import datetime
@@ -24,6 +25,7 @@ from api.models import ErrorResponse
 from api.alerts_routes import router as alerts_router
 from api.statistics_routes import router as statistics_router
 from api.model_routes import router as model_router
+from services.websocket_manager import manager as ws_manager
 
 # Setup logging
 logger = setup_logger()
@@ -82,6 +84,16 @@ app.include_router(scheduler_router, prefix="/api/v1")
 app.include_router(alerts_router, prefix="/api/v1")
 app.include_router(statistics_router, prefix="/api/v1")
 app.include_router(model_router, prefix="/api/v1")
+
+# WebSocket endpoint for real-time updates
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await ws_manager.connect(websocket)
+    try:
+        while True:
+            await websocket.receive_text()
+    except WebSocketDisconnect:
+        ws_manager.disconnect(websocket)
 
 # Define Pydantic models for request/response validation
 class Device(BaseModel):
@@ -276,6 +288,7 @@ def initialize_system():
 # Initialize system on startup
 @app.on_event("startup")
 async def startup_event():
+    ws_manager.set_loop(asyncio.get_running_loop())
     initialize_system()
 
 if __name__ == "__main__":

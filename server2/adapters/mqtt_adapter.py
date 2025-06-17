@@ -11,6 +11,7 @@ import paho.mqtt.client as mqtt
 from .base_adapter import BaseAdapter
 from utils.logger import get_logger
 from utils.config import get_config
+from services.websocket_manager import manager as ws_manager
 
 # Get logger
 logger = get_logger()
@@ -144,9 +145,12 @@ class MQTTAdapter(BaseAdapter):
             
             # Parse JSON payload
             data = json.loads(payload)
-            
+
             # Add topic to data for device_id extraction
             data['topic'] = msg.topic
+
+            # Broadcast raw data update
+            ws_manager.broadcast({"event": "data_update", "data": data})
             
             # Add to buffer
             self.message_buffer.append(data)
@@ -199,9 +203,13 @@ class MQTTAdapter(BaseAdapter):
             if not anomalies.empty:
                 anomaly_count = len(anomalies)
                 logger.info(f"Detected {anomaly_count} anomalies in real-time data")
-                
+
                 # Store anomalies in database
                 insert_anomalies(anomalies)
+
+                # Broadcast anomalies to clients
+                for anomaly in anomalies.to_dict(orient="records"):
+                    ws_manager.broadcast({"event": "anomaly_alert", "data": anomaly})
         
         except Exception as e:
             logger.error(f"Error processing message buffer: {str(e)}")
