@@ -64,17 +64,7 @@ const KPIDashboard: React.FC = () => {
       setError(null);
     } catch (err) {
       console.error('Error fetching KPI data:', err);
-      
-      // Use mock data if API fails
-      setKpiData({
-        packetsPerSecond: 245,
-        anomaliesToday: 12,
-        devicesOnline: 8,
-        totalTraffic: 1254,
-        detectionAccuracy: 92.5
-      });
-      
-      setError('Using sample data - API connection failed');
+      setError('Failed to load KPI data');
     } finally {
       setLoading(false);
     }
