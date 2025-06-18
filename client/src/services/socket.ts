@@ -5,7 +5,8 @@ class SocketService {
   connect() {
     if (this.ws && this.ws.readyState === WebSocket.OPEN) return;
 
-    this.ws = new WebSocket('ws://localhost:5000/ws');
+    const url = import.meta.env.VITE_WS_URL || 'ws://localhost:5000/ws';
+    this.ws = new WebSocket(url);
 
     this.ws.onopen = () => {
       console.log('WebSocket connected');

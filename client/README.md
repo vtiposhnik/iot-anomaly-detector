@@ -36,6 +36,17 @@ cd iot-anomaly-monitor
 npm install
 ```
 
+### Environment Variables
+
+Create a `.env` file in the `client` directory with the following variables or copy and rename `.env.example`:
+
+```
+VITE_API_URL=http://localhost:5000/api/v1
+VITE_WS_URL=ws://localhost:5000/ws
+```
+
+These values configure the backend API endpoint and WebSocket server used by the frontend.
+
 3. Run the development server:
 ```
 npm start
