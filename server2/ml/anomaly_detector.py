@@ -41,16 +41,11 @@ model_status = {
 }
 
 def load_models():
-    """
-    Load trained models from disk or train new ones if they don't exist
-    
-    Returns:
-        Boolean indicating success
-    """
+    """Load trained models from disk or train new ones if they don't exist."""
     global isolation_forest_model, lof_model, scaler, model_status
-    
+
     try:
-        # Check if models exist
+        # Load existing models if present
         if os.path.exists(ISO_FOREST_MODEL_PATH):
             logger.info(f"Loading Isolation Forest model from {ISO_FOREST_MODEL_PATH}")
             isolation_forest_model = joblib.load(ISO_FOREST_MODEL_PATH)
@@ -58,55 +53,44 @@ def load_models():
         else:
             logger.warning(f"Isolation Forest model not found at {ISO_FOREST_MODEL_PATH}")
             logger.info("Training new Isolation Forest model...")
-            
-            # Get data for training
+
             traffic_data = get_traffic(limit=10000)
             if not traffic_data:
                 logger.error("No traffic data available for training")
                 return False
-            
-            # Convert to DataFrame
+
             traffic_df = pd.DataFrame(traffic_data)
-            
-            # Extract features
             feature_df = extract_features_from_traffic(traffic_df)
-            
-            # Normalize features
             X, scaler_obj, _ = normalize_features(feature_df, training=True)
-            
-            # Save scaler
+
             joblib.dump(scaler_obj, SCALER_PATH)
             scaler = scaler_obj
-            
-            # Train models
+
             isolation_forest_model = train_isolation_forest(X)
             lof_model = train_lof(X)
-            
+
             if not isolation_forest_model or not lof_model:
                 logger.error("Failed to train models")
                 return False
-            
+
             model_status['isolation_forest']['trained'] = True
             model_status['lof']['trained'] = True
-        
-        # Load LOF model
+
         if os.path.exists(LOF_MODEL_PATH):
             logger.info(f"Loading LOF model from {LOF_MODEL_PATH}")
             lof_model = joblib.load(LOF_MODEL_PATH)
             model_status['lof']['trained'] = True
-        
-        # Load scaler
+
         if os.path.exists(SCALER_PATH):
             logger.info(f"Loading scaler from {SCALER_PATH}")
             scaler = joblib.load(SCALER_PATH)
-        
-        # Update overall model status
-        model_status['trained'] = (model_status['isolation_forest']['trained'] or model_status['lof']['trained'])
+
+        model_status['trained'] = model_status['isolation_forest']['trained'] or model_status['lof']['trained']
         model_status['last_training_time'] = datetime.now().isoformat()
-        
+
         logger.info("Models loaded successfully")
         return True
-    
+
     except Exception as e:
         logger.error(f"Error loading models: {str(e)}")
         return False
@@ -275,457 +259,6 @@ def get_model_status():
     global model_status
     return model_status
 
-def load_models():
-    """
-    Load trained models from disk or train new ones if they don't exist
-    
-    Returns:
-        Boolean indicating success
-    """
-    global isolation_forest_model, lof_model, scaler, model_status
-    
-    try:
-        # Check if models exist
-        if os.path.exists(ISO_FOREST_MODEL_PATH):
-            logger.info(f"Loading Isolation Forest model from {ISO_FOREST_MODEL_PATH}")
-            isolation_forest_model = joblib.load(ISO_FOREST_MODEL_PATH)
-            model_status['isolation_forest']['trained'] = True
-        else:
-            logger.warning(f"Isolation Forest model not found at {ISO_FOREST_MODEL_PATH}")
-            logger.info("Training new Isolation Forest model...")
-            
-            # Get data for training
-            traffic_data = get_traffic(limit=10000)
-            if not traffic_data:
-                logger.error("No traffic data available for training")
-                return False
-            
-            # Convert to DataFrame
-            traffic_df = pd.DataFrame(traffic_data)
-            
-            # Extract features
-            feature_df = extract_features_from_traffic(traffic_df)
-            
-            # Normalize features
-            X, scaler_obj, _ = normalize_features(feature_df, training=True)
-            
-            # Save scaler
-            joblib.dump(scaler_obj, SCALER_PATH)
-            scaler = scaler_obj
-            
-            # Train models
-            isolation_forest_model = train_isolation_forest(X)
-            lof_model = train_lof(X)
-            
-            if not isolation_forest_model or not lof_model:
-                logger.error("Failed to train models")
-                return False
-            
-            model_status['isolation_forest']['trained'] = True
-            model_status['lof']['trained'] = True
-        
-        # Load LOF model
-        if os.path.exists(LOF_MODEL_PATH):
-            logger.info(f"Loading LOF model from {LOF_MODEL_PATH}")
-            lof_model = joblib.load(LOF_MODEL_PATH)
-            model_status['lof']['trained'] = True
-        
-        # Load scaler
-        if os.path.exists(SCALER_PATH):
-            logger.info(f"Loading scaler from {SCALER_PATH}")
-            scaler = joblib.load(SCALER_PATH)
-        
-        # Update overall model status
-        model_status['trained'] = (model_status['isolation_forest']['trained'] or model_status['lof']['trained'])
-        model_status['last_training_time'] = datetime.now().isoformat()
-        
-        logger.info("Models loaded successfully")
-        return True
-    
-    except Exception as e:
-        logger.error(f"Error loading models: {str(e)}")
-        return False
-
-def train_isolation_forest(X_train, contamination=0.1):
-    """
-    Train an Isolation Forest model for anomaly detection
-    
-    Args:
-        X_train: Training data
-        contamination: Expected proportion of anomalies
-    
-    Returns:
-        Trained model
-    """
-    try:
-        # Create and train the model
-        model = IsolationForest(
-            n_estimators=100,
-            max_samples='auto',
-            contamination=contamination,
-            random_state=42
-        )
-        
-        model.fit(X_train)
-        
-        # Save the model
-        os.makedirs(os.path.dirname(ISO_FOREST_MODEL_PATH), exist_ok=True)
-        joblib.dump(model, ISO_FOREST_MODEL_PATH)
-        
-        logger.info(f"Isolation Forest model trained and saved to {ISO_FOREST_MODEL_PATH}")
-        
-        return model
-    
-    except Exception as e:
-        logger.error(f"Error training Isolation Forest model: {str(e)}")
-        return None
-
-def train_lof(X_train, contamination=0.1):
-    """
-    Train a Local Outlier Factor model for anomaly detection
-    
-    Args:
-        X_train: Training data
-        contamination: Expected proportion of anomalies
-    
-    Returns:
-        Trained model
-    """
-    try:
-        # Create and train the model
-        model = LocalOutlierFactor(
-            n_neighbors=20,
-            contamination=contamination,
-            novelty=True  # Allow prediction on new data
-        )
-        
-        model.fit(X_train)
-        
-        # Save the model
-        os.makedirs(os.path.dirname(LOF_MODEL_PATH), exist_ok=True)
-        joblib.dump(model, LOF_MODEL_PATH)
-        
-        logger.info(f"LOF model trained and saved to {LOF_MODEL_PATH}")
-        
-        return model
-    
-    except Exception as e:
-        logger.error(f"Error training LOF model: {str(e)}")
-        return None
-
-def detect_anomalies(data):
-    """
-    Detect anomalies in the provided data
-    
-    Args:
-        data: Dictionary or DataFrame containing traffic data
-    
-    Returns:
-        List of detected anomalies
-    """
-    global isolation_forest_model, lof_model, scaler, model_status
-    
-    try:
-        # Ensure models are loaded
-        if not model_status['trained']:
-            if not load_models():
-                logger.error("Failed to load models for anomaly detection")
-                return []
-        
-        # Convert data to DataFrame if it's a dictionary
-        if isinstance(data, dict):
-            df = pd.DataFrame([data])
-        else:
-            df = pd.DataFrame(data)
-        
-        # Extract features
-        feature_df = extract_features_from_traffic(df)
-        
-        if feature_df.empty:
-            logger.warning("No features could be extracted from the data")
-            return []
-        
-        # Normalize features using loaded scaler
-        X = scaler.transform(feature_df)
-        feature_names = feature_df.columns.tolist()
-        
-        # Predict anomalies
-        anomalies = []
-        
-        # Use Isolation Forest if available
-        if model_status['isolation_forest']['trained']:
-            iso_forest_pred = isolation_forest_model.predict(X)
-            iso_forest_score = isolation_forest_model.decision_function(X)
-        else:
-            iso_forest_pred = np.ones(len(X))  # Default to normal
-            iso_forest_score = np.zeros(len(X))
-        
-        # Use LOF if available
-        if model_status['lof']['trained']:
-            lof_pred = lof_model.predict(X)
-            lof_score = lof_model.decision_function(X)
-        else:
-            lof_pred = np.ones(len(X))  # Default to normal
-            lof_score = np.zeros(len(X))
-        
-        # Combine results
-        for i in range(len(X)):
-            anomaly_types = []
-            
-            if iso_forest_pred[i] == -1:
-                anomaly_types.append('Isolation Forest')
-            
-            if lof_pred[i] == -1:
-                anomaly_types.append('Local Outlier Factor')
-            
-            if anomaly_types:
-                # Calculate confidence score (negative of the average of normalized scores)
-                confidence = -0.5 * (iso_forest_score[i] + lof_score[i])
-                
-                # Create anomaly record
-                anomaly = {
-                    'timestamp': df.iloc[i].get('timestamp', datetime.now().isoformat()),
-                    'device_id': df.iloc[i].get('device_id', 'unknown'),
-                    'anomaly_type': anomaly_types,
-                    'confidence': float(confidence),
-                    'features': {name: float(feature_df.iloc[i][name]) if isinstance(feature_df.iloc[i][name], (int, float)) else feature_df.iloc[i][name] for name in feature_names if name in feature_df.columns}
-                }
-                
-                anomalies.append(anomaly)
-        
-        logger.info(f"Detected {len(anomalies)} anomalies in {len(X)} records")
-        return anomalies
-    
-    except Exception as e:
-        logger.error(f"Error detecting anomalies: {str(e)}")
-        return []
-
-def get_model_status():
-    """
-    Get the current status of the anomaly detection models
-    
-    Returns:
-        Dictionary with model status information
-    """
-    global model_status
-    return model_status
-
-# Get logger
-logger = get_logger()
-
-# Constants
-MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
-ISO_FOREST_MODEL_PATH = os.path.join(MODELS_DIR, 'isolation_forest.pkl')
-LOF_MODEL_PATH = os.path.join(MODELS_DIR, 'local_outlier_factor.pkl')
-SCALER_PATH = os.path.join(MODELS_DIR, 'scaler.pkl')
-
-# Ensure models directory exists
-os.makedirs(MODELS_DIR, exist_ok=True)
-
-# Global model instances
-isolation_forest_model = None
-lof_model = None
-scaler = None
-
-def load_models():
-    """
-    Load trained models from disk or train new ones if they don't exist
-    
-    Returns:
-        Boolean indicating success
-    """
-    global isolation_forest_model, lof_model, scaler
-    
-    try:
-        # Check if models exist
-        if os.path.exists(ISO_FOREST_MODEL_PATH):
-            logger.info(f"Loading Isolation Forest model from {ISO_FOREST_MODEL_PATH}")
-            isolation_forest_model = joblib.load(ISO_FOREST_MODEL_PATH)
-        else:
-            logger.warning(f"Isolation Forest model not found at {ISO_FOREST_MODEL_PATH}")
-            logger.info("Training new Isolation Forest model...")
-            
-            # Get data for training
-            traffic_data = get_traffic(limit=10000)
-            if not traffic_data:
-                logger.error("No traffic data available for training")
-                return False
-            
-            # Convert to DataFrame
-            traffic_df = pd.DataFrame(traffic_data)
-            
-            # Extract features
-            feature_df = extract_features_from_traffic(traffic_df)
-            
-            # Normalize features
-            X, scaler_obj, _ = normalize_features(feature_df, training=True)
-            
-            # Save scaler
-            joblib.dump(scaler_obj, SCALER_PATH)
-            scaler = scaler_obj
-            
-            # Train models
-            isolation_forest_model = train_isolation_forest(X)
-            lof_model = train_lof(X)
-            
-            if not isolation_forest_model or not lof_model:
-                logger.error("Failed to train models")
-                return False
-        
-        # Load LOF model
-        if os.path.exists(LOF_MODEL_PATH):
-            logger.info(f"Loading LOF model from {LOF_MODEL_PATH}")
-            lof_model = joblib.load(LOF_MODEL_PATH)
-        
-        # Load scaler
-        if os.path.exists(SCALER_PATH):
-            logger.info(f"Loading scaler from {SCALER_PATH}")
-            scaler = joblib.load(SCALER_PATH)
-        
-        logger.info("Models loaded successfully")
-        return True
-    
-    except Exception as e:
-        logger.error(f"Error loading models: {str(e)}")
-        return False
-
-def train_isolation_forest(X_train, contamination=0.1):
-    """
-    Train an Isolation Forest model for anomaly detection
-    
-    Args:
-        X_train: Training data
-        contamination: Expected proportion of anomalies
-    
-    Returns:
-        Trained model
-    """
-    try:
-        # Create and train the model
-        model = IsolationForest(
-            n_estimators=100,
-            max_samples='auto',
-            contamination=contamination,
-            random_state=42
-        )
-        
-        model.fit(X_train)
-        
-        # Save the model
-        os.makedirs(os.path.dirname(ISO_FOREST_MODEL_PATH), exist_ok=True)
-        joblib.dump(model, ISO_FOREST_MODEL_PATH)
-        
-        logger.info(f"Isolation Forest model trained and saved to {ISO_FOREST_MODEL_PATH}")
-        
-        return model
-    
-    except Exception as e:
-        logger.error(f"Error training Isolation Forest model: {str(e)}")
-        return None
-
-def train_lof(X_train):
-    """
-    Train a Local Outlier Factor model for anomaly detection
-    
-    Args:
-        X_train: Training data
-    
-    Returns:
-        Trained model
-    """
-    try:
-        # Create and train the model
-        model = LocalOutlierFactor(
-            n_neighbors=20,
-            contamination=0.1,
-            novelty=True  # Allow prediction on new data
-        )
-        
-        model.fit(X_train)
-        
-        # Save the model
-        os.makedirs(os.path.dirname(LOF_MODEL_PATH), exist_ok=True)
-        joblib.dump(model, LOF_MODEL_PATH)
-        
-        logger.info(f"LOF model trained and saved to {LOF_MODEL_PATH}")
-        
-        return model
-    
-    except Exception as e:
-        logger.error(f"Error training LOF model: {str(e)}")
-        return None
-
-def detect_anomalies(data):
-    """
-    Detect anomalies in the provided data
-    
-    Args:
-        data: Dictionary or DataFrame containing traffic data
-    
-    Returns:
-        List of detected anomalies
-    """
-    global isolation_forest_model, lof_model, scaler
-    
-    try:
-        # Ensure models are loaded
-        if isolation_forest_model is None or lof_model is None or scaler is None:
-            if not load_models():
-                logger.error("Failed to load models for anomaly detection")
-                return []
-        
-        # Convert data to DataFrame if it's a dictionary
-        if isinstance(data, dict):
-            df = pd.DataFrame([data])
-        else:
-            df = pd.DataFrame(data)
-        
-        # Extract features
-        feature_df = extract_features_from_traffic(df)
-        
-        if feature_df.empty:
-            logger.warning("No features could be extracted from the data")
-            return []
-        
-        # Normalize features using loaded scaler
-        X = scaler.transform(feature_df)
-        feature_names = feature_df.columns.tolist()
-        
-        # Predict anomalies
-        iso_forest_pred = isolation_forest_model.predict(X)
-        iso_forest_score = isolation_forest_model.decision_function(X)
-        
-        lof_pred = lof_model.predict(X)
-        lof_score = lof_model.decision_function(X)
-        
-        # Combine results
-        anomalies = []
-        for i in range(len(X)):
-            anomaly_types = []
-            
-            if iso_forest_pred[i] == -1:
-                anomaly_types.append('Isolation Forest')
-            
-            if lof_pred[i] == -1:
-                anomaly_types.append('Local Outlier Factor')
-            
-            if anomaly_types:
-                # Calculate confidence score (negative of the average of normalized scores)
-                confidence = -0.5 * (iso_forest_score[i] + lof_score[i])
-                
-                # Create anomaly record
-                anomaly = {
-                    'timestamp': df.iloc[i].get('timestamp', datetime.now().isoformat()),
-                    'device_id': df.iloc[i].get('device_id', 'unknown'),
-                    'anomaly_type': anomaly_types,
-                    'confidence': float(confidence),
-                    'features': {name: float(feature_df.iloc[i][name]) if isinstance(feature_df.iloc[i][name], (int, float)) else feature_df.iloc[i][name] for name in feature_names if name in feature_df.columns}
-                }
-                
-                anomalies.append(anomaly)
-    finally: print('lskdjf')
-    
-    return anomalies
 
 def get_model_status():
     """Get the current status of the anomaly detection models"""
