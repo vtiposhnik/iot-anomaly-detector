@@ -50,8 +50,8 @@ interface AggregatedData {
 
 // Using FormattedAnomaly from shared types
 
-// Using relative path for proxy to avoid CORS issues
-const API_URL = '/api/v1';
+// Use API URL from environment variables. Defaults to the proxy path.
+const API_URL = import.meta.env.VITE_API_URL || '/api/v1';
 
 // Create axios instance with case converter middleware
 const api = applyCaseMiddleware(axios.create({
