@@ -59,7 +59,7 @@ export const getAlerts = async (
     }
     
     const response = await axios.get<Alert[]>(
-      `${API_URL}/alerts?${params.toString()}`,
+      `${API_URL}?${params.toString()}`,
       { headers: { Authorization: `Bearer ${getToken()}` } }
     );
     
@@ -79,7 +79,7 @@ export const getAlerts = async (
 export const getAlertStatistics = async (days = 7): Promise<AlertStatistics> => {
   try {
     const response = await axios.get<AlertStatistics>(
-      `${API_URL}/alerts/statistics?days=${days}`,
+      `${API_URL}/statistics?days=${days}`,
       { headers: { Authorization: `Bearer ${getToken()}` } }
     );
     
@@ -104,7 +104,7 @@ export const getAlertStatistics = async (days = 7): Promise<AlertStatistics> => 
 export const getAlertById = async (alertId: number): Promise<Alert | null> => {
   try {
     const response = await axios.get<Alert>(
-      `${API_URL}/alerts/${alertId}`,
+      `${API_URL}/${alertId}`,
       { headers: { Authorization: `Bearer ${getToken()}` } }
     );
     
@@ -124,7 +124,7 @@ export const getAlertById = async (alertId: number): Promise<Alert | null> => {
 export const acknowledgeAlert = async (alertId: number): Promise<Alert | null> => {
   try {
     const response = await axios.patch<Alert>(
-      `${API_URL}/alerts/${alertId}`,
+      `${API_URL}/${alertId}`,
       { acknowledged: true },
       { headers: { Authorization: `Bearer ${getToken()}` } }
     );
@@ -151,7 +151,7 @@ export const acknowledgeAllAlerts = async (severity?: string): Promise<number> =
     }
     
     const response = await axios.post<{ acknowledged: number }>(
-      `${API_URL}/alerts/acknowledge-all?${params.toString()}`,
+      `${API_URL}/acknowledge-all?${params.toString()}`,
       {},
       { headers: { Authorization: `Bearer ${getToken()}` } }
     );
