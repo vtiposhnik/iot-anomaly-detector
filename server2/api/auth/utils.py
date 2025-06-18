@@ -13,6 +13,7 @@ from fastapi.security import OAuth2PasswordBearer
 from utils.logger import get_logger
 from utils.config import get_config
 from api.auth.models import UserInDB, TokenData, User
+from utils.database import get_user_by_username
 
 # Get logger
 logger = get_logger()
@@ -29,27 +30,6 @@ ALGORITHM = get_config("auth.algorithm", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = get_config("auth.access_token_expire_minutes", 30)
 REFRESH_TOKEN_EXPIRE_DAYS = get_config("auth.refresh_token_expire_days", 7)
 
-# Mock user database - in production, this would be a real database
-fake_users_db = {
-    "admin": {
-        "id": 1,
-        "username": "admin",
-        "email": "admin@example.com",
-        "full_name": "Administrator",
-        "disabled": False,
-        "hashed_password": pwd_context.hash("Admin123!"),
-        "roles": ["admin"]
-    },
-    "user": {
-        "id": 2,
-        "username": "user",
-        "email": "user@example.com",
-        "full_name": "Regular User",
-        "disabled": False,
-        "hashed_password": pwd_context.hash("User123!"),
-        "roles": ["user"]
-    }
-}
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """
@@ -86,8 +66,8 @@ def get_user(username: str) -> Optional[UserInDB]:
     Returns:
         User if found, None otherwise
     """
-    if username in fake_users_db:
-        user_dict = fake_users_db[username]
+    user_dict = get_user_by_username(username)
+    if user_dict:
         return UserInDB(**user_dict)
     return None
 

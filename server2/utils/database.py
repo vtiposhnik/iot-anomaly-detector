@@ -102,10 +102,39 @@ def init_db():
             FOREIGN KEY (device_id) REFERENCES devices (device_id)
         )
         ''')
+
+        # Create users table
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            email TEXT,
+            full_name TEXT,
+            disabled BOOLEAN DEFAULT 0,
+            hashed_password TEXT NOT NULL,
+            roles TEXT
+        )
+        ''')
         
         conn.commit()
+
+        # Create default admin user if none exist
+        cursor.execute("SELECT COUNT(*) as cnt FROM users")
+        count = cursor.fetchone()["cnt"]
+        if count == 0:
+            from passlib.context import CryptContext
+
+            pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+            hashed = pwd_context.hash("Admin123!")
+            cursor.execute(
+                "INSERT INTO users (username, email, full_name, disabled, hashed_password, roles) "
+                "VALUES (?, ?, ?, 0, ?, ?)",
+                ("admin", "admin@example.com", "Administrator", hashed, "admin"),
+            )
+            conn.commit()
+
         conn.close()
-        
+
         logger.info("Database initialized successfully")
         return True
     
@@ -165,6 +194,105 @@ def import_csv_to_db():
     
     except Exception as e:
         logger.error(f"Error importing data to database: {str(e)}")
+        return False
+
+def get_user_by_username(username: str):
+    """Retrieve a single user by username."""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+        row = cursor.fetchone()
+        conn.close()
+        if row:
+            user = dict(row)
+            user["roles"] = user.get("roles", "").split(",") if user.get("roles") else []
+            return user
+        return None
+    except Exception as e:
+        logger.error(f"Error getting user {username}: {str(e)}")
+        return None
+
+def get_all_users():
+    """Return a list of all users."""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users")
+        rows = cursor.fetchall()
+        conn.close()
+        users = []
+        for row in rows:
+            user = dict(row)
+            user["roles"] = user.get("roles", "").split(",") if user.get("roles") else []
+            users.append(user)
+        return users
+    except Exception as e:
+        logger.error(f"Error getting users: {str(e)}")
+        return []
+
+def create_user(user: dict):
+    """Insert a new user into the database."""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            INSERT INTO users (username, email, full_name, disabled, hashed_password, roles)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                user.get("username"),
+                user.get("email"),
+                user.get("full_name"),
+                1 if user.get("disabled") else 0,
+                user.get("hashed_password"),
+                ",".join(user.get("roles", [])),
+            ),
+        )
+        user_id = cursor.lastrowid
+        conn.commit()
+        conn.close()
+        return user_id
+    except Exception as e:
+        logger.error(f"Error creating user {user.get('username')}: {str(e)}")
+        return None
+
+def update_user(username: str, update_data: dict) -> bool:
+    """Update an existing user."""
+    try:
+        if not update_data:
+            return True
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        fields = []
+        params = []
+        for key, value in update_data.items():
+            if key == "roles" and isinstance(value, list):
+                value = ",".join(value)
+            fields.append(f"{key} = ?")
+            params.append(value)
+        params.append(username)
+        query = f"UPDATE users SET {', '.join(fields)} WHERE username = ?"
+        cursor.execute(query, params)
+        conn.commit()
+        conn.close()
+        return cursor.rowcount > 0
+    except Exception as e:
+        logger.error(f"Error updating user {username}: {str(e)}")
+        return False
+
+def delete_user(username: str) -> bool:
+    """Delete a user by username."""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM users WHERE username = ?", (username,))
+        conn.commit()
+        conn.close()
+        return cursor.rowcount > 0
+    except Exception as e:
+        logger.error(f"Error deleting user {username}: {str(e)}")
         return False
 
 def get_devices(limit=100):
