@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { 
-  Typography, 
-  Box, 
-  Tabs, 
-  Tab, 
-  ToggleButtonGroup, 
+import {
+  Typography,
+  Box,
+  Tabs,
+  Tab,
+  ToggleButtonGroup,
   ToggleButton
 } from '@mui/material';
 import {
-  Line, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip as RechartsTooltip, 
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip as RechartsTooltip,
   ResponsiveContainer,
   Area,
   ComposedChart
@@ -64,7 +64,7 @@ const DataVisualization: React.FC<DataVisualizationProps> = ({ data }) => {
   );
 
   // Filter data based on the toggle selection
-  const filteredData = showAnomaliesOnly 
+  const filteredData = showAnomaliesOnly
     ? sortedData.filter(item => item.status === 'anomaly')
     : sortedData;
 
@@ -83,9 +83,9 @@ const DataVisualization: React.FC<DataVisualizationProps> = ({ data }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <Box sx={{ 
-          bgcolor: 'background.paper', 
-          p: 1.5, 
+        <Box sx={{
+          bgcolor: 'background.paper',
+          p: 1.5,
           border: '1px solid rgba(0, 0, 0, 0.12)',
           borderRadius: 1,
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
@@ -94,7 +94,7 @@ const DataVisualization: React.FC<DataVisualizationProps> = ({ data }) => {
           <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
             {new Date(data.rawTimestamp).toLocaleString()}
           </Typography>
-          <Typography variant="body2" sx={{ 
+          <Typography variant="body2" sx={{
             color: data.isAnomaly ? '#e74c3c' : 'text.primary',
             fontWeight: data.isAnomaly ? 'bold' : 'normal'
           }}>
@@ -208,34 +208,35 @@ const DataVisualization: React.FC<DataVisualizationProps> = ({ data }) => {
               margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
             >
               <CartesianGrid strokeDasharray="3 3" opacity={0.6} />
-              <XAxis 
-                dataKey="timestamp" 
+              <XAxis
+                dataKey="timestamp"
                 tick={{ fontSize: 12 }}
-                label={{ 
-                  value: 'Time', 
-                  position: 'insideBottomRight', 
+                label={{
+                  value: 'Time',
+                  position: 'insideBottomRight',
                   offset: -10,
-                  fontSize: 12 
+                  fontSize: 12
                 }}
               />
               <YAxis
                 tick={{ fontSize: 12 }}
-                label={{ 
-                  value: `${currentMetric.name} (${currentMetric.unit})`, 
-                  angle: -90, 
+                label={{
+                  value: `${currentMetric.name} (${currentMetric.unit})`,
+                  angle: -90,
                   position: 'insideLeft',
-                  fontSize: 12 
+                  fontSize: 12
                 }}
               />
               <RechartsTooltip content={<CustomTooltip />} />
-              <Area 
-                type="monotone" 
-                dataKey="value" 
-                fill={`${currentMetric.color}20`} 
+              <Area
+                type="monotone"
+                dataKey="value"
+                fill={`${currentMetric.color}20`}
                 stroke="none"
                 activeDot={false}
               />
               <Line
+                key={filteredData.length}
                 type="monotone"
                 dataKey="value"
                 stroke={currentMetric.color}

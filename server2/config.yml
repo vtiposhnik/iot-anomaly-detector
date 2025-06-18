@@ -56,7 +56,7 @@ auth:
   access_token_expire_minutes: 30
   
   # Enable/disable authentication for API endpoints
-  enabled: true
+  enabled: false
   
   # Endpoints that don't require authentication
   public_endpoints:

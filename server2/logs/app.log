@@ -203,3 +203,398 @@
 2025-06-18 04:19:32,617 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
 2025-06-18 04:19:32,619 - iot_anomaly_detection - INFO - Models loaded successfully
 2025-06-18 04:19:32,620 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 05:59:56,765 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 06:00:06,088 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 06:00:06,141 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 06:00:06,155 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 06:00:06,157 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 06:00:06,242 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 06:00:06,246 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 06:00:06,269 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 06:00:06,273 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 06:00:07,403 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 06:00:07,404 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 06:00:07,404 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 06:00:07,412 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 06:00:07,413 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 06:00:07,414 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 06:00:07,696 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 06:00:07,696 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 06:00:07,697 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 06:00:07,697 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 06:00:07,697 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 06:00:07,700 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 06:00:07,701 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 06:00:07,725 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 06:00:07,729 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 06:00:07,730 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 06:00:07,730 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 07:03:30,901 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 07:03:33,770 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 07:03:33,804 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 07:03:33,810 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 07:03:33,812 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 07:03:33,872 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 07:03:33,876 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 07:03:33,899 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 07:03:33,902 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 07:03:34,656 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 07:03:34,656 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 07:03:34,657 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 07:03:34,664 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 07:03:34,664 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 07:03:34,666 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 07:03:34,941 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 07:03:34,942 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 07:03:34,942 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 07:03:34,942 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 07:03:34,942 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 07:03:34,945 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 07:03:34,945 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 07:03:34,969 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 07:03:34,973 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 07:03:34,975 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 07:03:34,975 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 07:03:55,056 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-18 07:03:55,060 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-18 07:03:55,061 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-18 07:04:02,342 - iot_anomaly_detection - INFO - User admin logged in
+2025-06-18 07:18:04,233 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 07:18:06,892 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 07:18:06,920 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 07:18:06,926 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 07:18:06,927 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 07:18:06,990 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 07:18:06,993 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 07:18:07,023 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 07:18:07,026 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 07:18:07,763 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 07:18:07,763 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 07:18:07,764 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 07:18:07,771 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 07:18:07,771 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 07:18:07,772 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 07:18:08,102 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 07:18:08,102 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 07:18:08,102 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 07:18:08,103 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 07:18:08,103 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 07:18:08,106 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 07:18:08,106 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 07:18:08,131 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 07:18:08,135 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 07:18:08,136 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 07:18:08,136 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:26:05,063 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 13:26:08,446 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:26:08,480 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:26:08,484 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:26:08,485 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:26:08,545 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:26:08,548 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:26:08,575 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:26:08,578 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:26:09,364 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:26:09,364 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 13:26:09,366 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:26:09,376 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:26:09,376 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:26:09,377 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:26:09,715 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:26:09,715 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:26:09,715 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:26:09,716 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:26:09,716 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:26:09,719 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:26:09,719 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:26:09,742 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:26:09,746 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:26:09,747 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:26:09,747 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:37:18,966 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 13:37:21,726 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:37:21,760 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:37:21,765 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:37:21,766 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:37:21,825 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:37:21,829 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:37:21,853 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:37:21,856 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:37:22,604 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:37:22,604 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 13:37:22,604 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:37:22,613 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:37:22,613 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:37:22,615 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:37:22,950 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:37:22,950 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:37:22,951 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:37:22,951 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:37:22,951 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:37:22,953 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:37:22,953 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:37:22,977 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:37:22,981 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:37:22,982 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:37:22,982 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:46:28,470 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 13:46:31,065 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:46:31,096 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:46:31,101 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:46:31,102 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:46:31,158 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:46:31,162 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:46:31,187 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:46:31,190 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:46:31,937 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:46:31,937 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 13:46:31,937 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:46:31,947 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:46:31,947 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:46:31,948 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:46:32,273 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:46:32,274 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:46:32,274 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:46:32,274 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:46:32,275 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:46:32,277 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:46:32,277 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:46:32,303 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:46:32,307 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:46:32,308 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:46:32,308 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:47:31,610 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 13:47:33,767 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:33,794 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:33,798 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:33,799 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:47:33,845 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:47:33,848 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:33,873 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:33,876 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:34,594 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:47:34,594 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 13:47:34,594 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:47:34,598 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:47:34,598 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:47:34,599 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:47:34,922 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:47:34,922 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:47:34,922 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:47:34,924 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:47:34,924 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:47:34,926 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:47:34,926 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:34,959 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:34,964 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:34,964 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:47:34,966 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:47:47,969 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:47,997 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:48,001 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:48,001 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:47:48,042 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:47:48,044 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:48,069 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:48,072 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:50,362 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:50,390 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:50,393 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:50,395 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:47:50,436 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:47:50,439 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:50,464 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:50,467 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:51,239 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:47:51,239 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 13:47:51,240 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:47:51,242 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:47:51,243 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:47:51,244 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:47:51,572 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:47:51,572 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:47:51,573 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:47:51,573 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:47:51,573 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:47:51,576 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:47:51,576 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:47:51,599 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:47:51,603 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:47:51,604 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:47:51,605 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:51:03,795 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:51:03,827 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:51:03,834 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:51:03,835 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:51:03,892 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:51:03,895 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:51:03,920 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:51:03,923 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:51:06,482 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:51:06,516 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:51:06,521 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:51:06,522 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:51:06,567 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:51:06,570 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:51:06,596 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:51:06,600 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:51:07,385 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:51:07,386 - iot_anomaly_detection - INFO - Authentication enabled: True
+2025-06-18 13:51:07,386 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:51:07,395 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:51:07,395 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:51:07,396 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:51:07,724 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:51:07,724 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:51:07,724 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:51:07,725 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:51:07,725 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:51:07,727 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:51:07,728 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:51:07,753 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:51:07,757 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:51:07,758 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:51:07,758 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 13:54:30,006 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:54:30,038 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:54:30,042 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:54:30,043 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:54:30,368 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:54:30,372 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:54:30,398 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:54:30,402 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:54:33,056 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:54:33,083 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:54:33,086 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:54:33,087 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:54:33,128 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 13:54:33,131 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:54:33,156 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:54:33,160 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:54:33,957 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 13:54:33,958 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-18 13:54:33,958 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 13:54:33,968 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:54:33,969 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 13:54:33,969 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 13:54:34,321 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 13:54:34,321 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 13:54:34,322 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 13:54:34,322 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 13:54:34,323 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 13:54:34,325 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 13:54:34,325 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 13:54:34,350 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 13:54:34,354 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 13:54:34,354 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 13:54:34,354 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 14:14:36,954 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 14:14:39,833 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:14:39,866 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:14:39,871 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:14:39,873 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 14:14:39,931 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 14:14:39,935 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:14:39,960 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:14:39,963 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:14:41,029 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 14:14:41,030 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-18 14:14:41,030 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 14:14:41,038 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 14:14:41,038 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 14:14:41,039 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 14:14:41,377 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 14:14:41,377 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 14:14:41,377 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 14:14:41,377 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 14:14:41,378 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 14:14:41,380 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 14:14:41,380 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:14:41,406 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:14:41,411 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:14:41,413 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 14:14:41,413 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 14:31:44,137 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 14:31:47,029 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:31:47,058 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:31:47,064 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:31:47,066 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 14:31:47,132 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 14:31:47,136 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:31:47,168 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:31:47,172 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:31:47,512 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 14:31:47,513 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-18 14:31:47,513 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 14:31:47,764 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 14:31:47,764 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 14:31:47,767 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 14:31:48,232 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 14:31:48,232 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 14:31:48,233 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 14:31:48,233 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 14:31:48,233 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 14:31:48,235 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 14:31:48,236 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:31:48,264 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:31:48,267 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:31:48,268 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 14:31:48,269 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 14:34:59,601 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-18 14:34:59,610 - iot_anomaly_detection - ERROR - HTTP error: Could not validate credentials
+2025-06-18 14:34:59,643 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-18 14:35:04,052 - iot_anomaly_detection - INFO - User admin logged in
+2025-06-18 14:35:04,224 - iot_anomaly_detection - ERROR - HTTP error: Not authenticated
+2025-06-18 14:35:04,224 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-18 14:35:04,264 - iot_anomaly_detection - ERROR - Error getting alert statistics: no such table: alerts
+2025-06-18 14:35:04,264 - iot_anomaly_detection - ERROR - HTTP error: Error getting alert statistics: no such table: alerts
+2025-06-18 14:35:04,266 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-18 14:35:15,163 - iot_anomaly_detection - ERROR - HTTP error: Not authenticated
+2025-06-18 14:35:15,163 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-18 14:35:15,190 - iot_anomaly_detection - ERROR - Error getting alert statistics: no such table: alerts
+2025-06-18 14:35:15,191 - iot_anomaly_detection - ERROR - HTTP error: Error getting alert statistics: no such table: alerts
+2025-06-18 14:35:15,192 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-18 14:42:34,093 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-18 14:42:36,912 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:42:36,940 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:42:36,944 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:42:36,945 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 14:42:37,001 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-18 14:42:37,004 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:42:37,091 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:42:37,094 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:42:37,348 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-18 14:42:37,348 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-18 14:42:37,349 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-18 14:42:37,356 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 14:42:37,356 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-18 14:42:37,358 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-18 14:42:37,716 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-18 14:42:37,717 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-18 14:42:37,717 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-18 14:42:37,718 - iot_anomaly_detection - INFO - Links: 49
+2025-06-18 14:42:37,718 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-18 14:42:37,720 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-18 14:42:37,720 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-18 14:42:37,745 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-18 14:42:37,748 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-18 14:42:37,749 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-18 14:42:37,749 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-18 14:42:45,803 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:42:47,069 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:42:48,858 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:42:50,824 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:44:18,107 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:44:19,390 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:44:30,566 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:44:32,572 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:44:32,808 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:44:33,196 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:44:33,842 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:44:35,602 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:44:37,591 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:44:38,619 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-18 14:44:38,856 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:46:33,292 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:46:33,445 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-18 14:46:34,222 - iot_anomaly_detection - INFO - WebSocket disconnected

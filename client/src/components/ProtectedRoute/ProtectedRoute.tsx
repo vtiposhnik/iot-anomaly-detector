@@ -23,6 +23,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 }) => {
   const { isLoggedIn, loading } = useAuth();
   const location = useLocation();
+  console.log(isLoggedIn);
 
   // Show loading spinner while checking authentication
   if (loading) {
