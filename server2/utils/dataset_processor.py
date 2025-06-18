@@ -152,17 +152,17 @@ def process_iot23_dataset(file_path=None):
         })
         
         # 4. Create anomalies (db_device_anomalies)
-        # Print sample data for debugging
-        print("\nSample labels from dataset:")
-        print(df['label'].value_counts())
-        
+        # Log sample distribution for reference
+        logger.info("Sample labels from dataset:")
+        logger.info(df['label'].value_counts())
+
         if 'attack_type' in df.columns:
-            print("\nSample attack types:")
-            print(df['attack_type'].value_counts())
+            logger.info("Sample attack types:")
+            logger.info(df['attack_type'].value_counts())
         
         # Check for malicious entries
         anomaly_df = traffic_df[traffic_df['label'] == 'Malicious'].copy()
-        print(f"\nFound {len(anomaly_df)} malicious entries")
+        logger.info(f"Found {len(anomaly_df)} malicious entries")
         
         anomaly_df['anomaly_id'] = range(1, len(anomaly_df) + 1) if len(anomaly_df) > 0 else []
         anomaly_df['type_id'] = 1  # Default type
@@ -250,7 +250,7 @@ if __name__ == "__main__":
         # Create training data
         if processed_data:
             training_path = create_training_data()
-            print(f"Training data created: {training_path}")
+            logger.info(f"Training data created: {training_path}")
     else:
-        print(f"Dataset file not found: {file_path}")
-        print("Please make sure conn.log.labeled is in the server2/data/iot23/ directory")
+        logger.error(f"Dataset file not found: {file_path}")
+        logger.error("Please make sure conn.log.labeled is in the server2/data/iot23/ directory")

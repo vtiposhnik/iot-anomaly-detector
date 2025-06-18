@@ -286,13 +286,13 @@ def load_iot23_test_data(limit=1000):
 if __name__ == "__main__":
     # Test the module
     X_train, y_train, feature_names = prepare_iot23_training_data()
-    
+
     if X_train is not None:
-        print(f"Prepared {len(X_train)} training samples with {len(feature_names)} features")
-        print(f"Feature names: {feature_names}")
-        
+        logger.info(f"Prepared {len(X_train)} training samples with {len(feature_names)} features")
+        logger.info(f"Feature names: {feature_names}")
+
         # Load test data
         X_test, y_test, _ = load_iot23_test_data(limit=100)
-        
+
         if X_test is not None:
-            print(f"Loaded {len(X_test)} test samples")
+            logger.info(f"Loaded {len(X_test)} test samples")
