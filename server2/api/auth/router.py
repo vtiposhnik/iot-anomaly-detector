@@ -12,8 +12,12 @@ from utils.logger import get_logger
 from api.auth.models import User, UserCreate, UserUpdate, Token
 from api.auth.utils import (
     authenticate_user, create_access_token, create_refresh_token, get_current_active_user,
-    check_admin_role, get_user, get_password_hash, fake_users_db, verify_refresh_token,
+    check_admin_role, get_user, get_password_hash, verify_refresh_token,
     ACCESS_TOKEN_EXPIRE_MINUTES
+)
+from utils.database import (
+    get_all_users, get_user_by_username, create_user as db_create_user,
+    update_user as db_update_user, delete_user as db_delete_user
 )
 
 # Get logger
@@ -142,11 +146,7 @@ async def read_users(current_user: User = Depends(check_admin_role)):
     Returns:
         List of all users
     """
-    users = []
-    for username, user_dict in fake_users_db.items():
-        user = User(**user_dict)
-        users.append(user)
-    
+    users = [User(**u) for u in get_all_users()]
     return users
 
 @router.post("/users", response_model=User, status_code=status.HTTP_201_CREATED)
@@ -164,26 +164,26 @@ async def create_user(user: UserCreate, current_user: User = Depends(check_admin
     Raises:
         HTTPException: If user already exists
     """
-    if user.username in fake_users_db:
+    if get_user_by_username(user.username):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Username already registered"
+            detail="Username already registered",
         )
-    
-    # Create user
-    user_id = len(fake_users_db) + 1
+
     hashed_password = get_password_hash(user.password)
-    
+
     user_dict = user.dict()
     user_dict.pop("password")
-    user_dict["id"] = user_id
     user_dict["hashed_password"] = hashed_password
-    user_dict["roles"] = ["user"]  # Default role
-    
-    fake_users_db[user.username] = user_dict
-    
+    user_dict["roles"] = ["user"]
+
+    user_id = db_create_user(user_dict)
+    if user_id is None:
+        raise HTTPException(status_code=500, detail="Error creating user")
+    user_dict["id"] = user_id
+
     logger.info(f"User {user.username} created by {current_user.username}")
-    
+
     return User(**user_dict)
 
 @router.put("/users/{username}", response_model=User)
@@ -206,14 +206,12 @@ async def update_user(
     Raises:
         HTTPException: If user does not exist
     """
-    if username not in fake_users_db:
+    if not get_user_by_username(username):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found"
         )
-    
-    # Update user
-    user_dict = fake_users_db[username]
+
     update_data = user_update.dict(exclude_unset=True)
     
     if "password" in update_data:
@@ -221,14 +219,14 @@ async def update_user(
         update_data["hashed_password"] = hashed_password
         del update_data["password"]
     
-    for field, value in update_data.items():
-        user_dict[field] = value
-    
-    fake_users_db[username] = user_dict
-    
+    if not db_update_user(username, update_data):
+        raise HTTPException(status_code=500, detail="Error updating user")
+
+    updated = get_user_by_username(username)
+
     logger.info(f"User {username} updated by {current_user.username}")
-    
-    return User(**user_dict)
+
+    return User(**updated)
 
 @router.delete("/users/{username}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_user(username: str, current_user: User = Depends(check_admin_role)):
@@ -242,7 +240,7 @@ async def delete_user(username: str, current_user: User = Depends(check_admin_ro
     Raises:
         HTTPException: If user does not exist or is the current user
     """
-    if username not in fake_users_db:
+    if not get_user_by_username(username):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found"
@@ -254,7 +252,8 @@ async def delete_user(username: str, current_user: User = Depends(check_admin_ro
             detail="Cannot delete your own account"
         )
     
-    # Delete user
-    del fake_users_db[username]
+    if not db_delete_user(username):
+        raise HTTPException(status_code=500, detail="Error deleting user")
     
     logger.info(f"User {username} deleted by {current_user.username}")
+

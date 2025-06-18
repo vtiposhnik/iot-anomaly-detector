@@ -77,6 +77,20 @@ def update_schema():
             FOREIGN KEY (anomaly_id) REFERENCES anomalies (anomaly_id)
         )
         ''')
+
+        # 4. Create users table if missing
+        logger.info("Creating users table...")
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            email TEXT,
+            full_name TEXT,
+            disabled BOOLEAN DEFAULT 0,
+            hashed_password TEXT NOT NULL,
+            roles TEXT
+        )
+        ''')
         
         # Commit changes
         conn.commit()
