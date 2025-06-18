@@ -1,14 +1,23 @@
 class SocketService {
   private ws: WebSocket | null = null;
   private listeners: Map<string, Set<(data: any) => void>> = new Map();
+  private reconnectAttempts = 0;
+  private reconnectTimer: number | null = null;
+  private readonly maxReconnectAttempts = 5;
+  private readonly baseDelay = 1000; // ms
 
   connect() {
-    if (this.ws && this.ws.readyState === WebSocket.OPEN) return;
+    if (this.ws && (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING)) return;
 
     this.ws = new WebSocket('ws://localhost:5000/ws');
 
     this.ws.onopen = () => {
       console.log('WebSocket connected');
+      this.reconnectAttempts = 0;
+      if (this.reconnectTimer) {
+        clearTimeout(this.reconnectTimer);
+        this.reconnectTimer = null;
+      }
     };
 
     this.ws.onmessage = (event: MessageEvent) => {
@@ -25,6 +34,7 @@ class SocketService {
     this.ws.onclose = () => {
       console.log('WebSocket disconnected');
       this.ws = null;
+      this.scheduleReconnect();
     };
   }
 
@@ -33,6 +43,25 @@ class SocketService {
       this.ws.close();
       this.ws = null;
     }
+    if (this.reconnectTimer) {
+      clearTimeout(this.reconnectTimer);
+      this.reconnectTimer = null;
+    }
+  }
+
+  reconnect() {
+    this.disconnect();
+    this.reconnectAttempts = 0;
+    this.connect();
+  }
+
+  private scheduleReconnect() {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) return;
+
+    const delay = Math.min(this.baseDelay * 2 ** this.reconnectAttempts, 30000);
+    this.reconnectAttempts++;
+    console.log(`Reconnecting in ${delay}ms (attempt ${this.reconnectAttempts})`);
+    this.reconnectTimer = window.setTimeout(() => this.connect(), delay);
   }
 
   addEventListener(event: string, callback: (data: any) => void) {
