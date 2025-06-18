@@ -9,6 +9,8 @@ import { AuthProvider } from '@/context/AuthContext';
 import theme from '@/theme';
 import './App.css';
 import Dashboard from '@/pages/Dashboard';
+import Devices from '@/pages/Devices';
+import Settings from '@/pages/Settings';
 import { FC } from 'react';
 
 const App: FC = () => {
@@ -20,6 +22,8 @@ const App: FC = () => {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/devices" element={<Devices />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/profile" element={
               <ProtectedRoute>
                 <Container maxWidth="sm" sx={{ mt: 4 }}>
