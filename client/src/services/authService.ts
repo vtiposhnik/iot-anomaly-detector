@@ -110,7 +110,6 @@ export const getCurrentUser = async (): Promise<User | null> => {
   const { data: user } = await axios.get<User>(`${API_URL}/users/me`);
 
   localStorage.setItem(USER_KEY, JSON.stringify(user));
-  console.log(user);
 
   if (!user) {
     return null;
@@ -126,8 +125,6 @@ export const getCurrentUser = async (): Promise<User | null> => {
  */
 export const getCurrentUserFromLocalStorage = (): User | null => {
   const userJson = localStorage.getItem(USER_KEY);
-  console.log(userJson);
-
 
   if (!userJson || userJson === 'undefined') {
     return null;

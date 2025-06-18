@@ -214,7 +214,6 @@ export const fetchDeviceAnomalies = async (deviceId: string, params = {}): Promi
 
 export const resolveAnomaly = async (anomalyId: string, data: any) => {
   // The backend doesn't have this endpoint yet, so we'll mock it
-  console.log(`Resolving anomaly ${anomalyId} with data:`, data);
 
   // Return a mock response
   return {
