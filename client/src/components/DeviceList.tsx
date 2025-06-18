@@ -63,8 +63,7 @@ const DeviceList: React.FC<DeviceListProps> = ({
     return 'info';
   };
 
-  console.log(devices);
-  
+
   return (
     <Box sx={{ 
       borderRadius: 2,

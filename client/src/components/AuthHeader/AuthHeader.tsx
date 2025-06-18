@@ -68,8 +68,6 @@ const AuthHeader: React.FC = () => {
     navigate('/login');
   };
 
-  console.log(isLoggedIn);
-
 
   if (isLoggedIn) {
     return (

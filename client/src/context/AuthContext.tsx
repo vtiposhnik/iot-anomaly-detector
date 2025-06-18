@@ -20,16 +20,8 @@ interface AuthContextType {
   isLoggedIn: boolean;
 }
 
-// Create the context with a default value
-const AuthContext = createContext<AuthContextType>({
-  loading: false,
-  error: null,
-  user: null,
-  login: async () => { },
-  logout: () => { },
-  isAdmin: () => false,
-  isLoggedIn: false,
-});
+// Create the context without a default to detect missing provider usage
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 /**
  * Props for AuthProvider component
@@ -54,11 +46,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const initializeAuth = async () => {
       try {
         authService.initAuth();
-        const isLoggedIn = authService.isLoggedIn();
         const currentUser = await authService.getCurrentUser();
-        
-        setIsLoggedIn(isLoggedIn);
+
         setUser(currentUser);
+        setIsLoggedIn(!!currentUser);
       } catch (err) {
         console.error('Failed to initialize authentication:', err);
       } finally {
@@ -134,7 +125,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
  */
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
-  if (!context) {
+  if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
