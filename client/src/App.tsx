@@ -12,6 +12,7 @@ import Dashboard from '@/pages/Dashboard';
 import Devices from '@/pages/Devices';
 import Settings from '@/pages/Settings';
 import { FC } from 'react';
+import DashboardHeader from './components/DashboardHeader';
 
 const App: FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: FC = () => {
       <CssBaseline />
       <AuthProvider>
         <Router>
+          <DashboardHeader />
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />

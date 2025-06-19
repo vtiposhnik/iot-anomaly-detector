@@ -176,7 +176,6 @@ const Dashboard: FC = () => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <DashboardHeader />
             <DashboardBody
                 devices={devices}
                 selectedDevice={selectedDevice}

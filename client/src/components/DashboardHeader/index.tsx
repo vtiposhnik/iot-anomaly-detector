@@ -2,6 +2,7 @@ import { Alert, Box, Typography, Container, AppBar, Toolbar, Button } from '@mui
 import { Notifications as NotificationsIcon } from '@mui/icons-material'
 import { Link as RouterLink } from 'react-router-dom'
 import AuthHeader from '../AuthHeader'
+import { Link } from 'react-router-dom'
 
 const DashboardHeader = ({ error }: { error?: string | null }) => (
     <Box sx={{ flexGrow: 1 }}>
@@ -10,13 +11,15 @@ const DashboardHeader = ({ error }: { error?: string | null }) => (
                 <Typography
                     variant="h6"
                     component="div"
-                    sx={{ 
+                    sx={{
                         flexGrow: 1,
                         fontWeight: 700,
                         color: 'primary.main',
                     }}
                 >
-                    IoT Anomaly Detection System
+                    <Link to="/dashboard">
+                        IoT Anomaly Detection System
+                    </Link>
                 </Typography>
                 <Button
                     component={RouterLink}
@@ -30,7 +33,7 @@ const DashboardHeader = ({ error }: { error?: string | null }) => (
                 <AuthHeader />
             </Toolbar>
         </AppBar>
-        
+
         <Container maxWidth="lg" sx={{ mt: 3, mb: 2 }}>
             <Typography
                 variant="h4"

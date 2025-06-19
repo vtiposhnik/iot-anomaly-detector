@@ -598,3 +598,188 @@
 2025-06-18 14:46:33,292 - iot_anomaly_detection - INFO - WebSocket disconnected
 2025-06-18 14:46:33,445 - iot_anomaly_detection - INFO - WebSocket disconnected
 2025-06-18 14:46:34,222 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:31:48,571 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-19 02:31:57,522 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 02:31:57,570 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 02:31:57,583 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 02:31:57,595 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-19 02:31:57,686 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-19 02:31:57,690 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 02:31:57,765 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 02:31:57,768 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 02:31:58,293 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-19 02:31:58,294 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-19 02:31:58,294 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-19 02:31:58,307 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-19 02:31:58,307 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-19 02:31:58,308 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-19 02:31:58,602 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-19 02:31:58,602 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-19 02:31:58,602 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-19 02:31:58,603 - iot_anomaly_detection - INFO - Links: 49
+2025-06-19 02:31:58,603 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-19 02:31:58,605 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-19 02:31:58,606 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 02:31:58,630 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 02:31:58,634 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 02:31:58,635 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-19 02:31:58,636 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-19 02:31:58,717 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:32:50,651 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:32:51,679 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:32:53,921 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:33:03,967 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:33:03,999 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-19 02:33:04,000 - iot_anomaly_detection - ERROR - HTTP error: Could not validate credentials
+2025-06-19 02:33:04,002 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 02:33:05,707 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:33:05,748 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:33:06,769 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:33:06,916 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:33:08,976 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:34:04,941 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:34:05,992 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:34:07,260 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:34:21,879 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-19 02:34:21,880 - iot_anomaly_detection - ERROR - HTTP error: Could not validate credentials
+2025-06-19 02:34:21,880 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 02:34:37,750 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:34:38,489 - iot_anomaly_detection - INFO - User admin logged in
+2025-06-19 02:34:39,803 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:34:41,206 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:34:42,758 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:34:52,138 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:02,107 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:02,210 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:35:06,164 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:07,130 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:35:11,070 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:12,366 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:15,734 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:16,125 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:35:17,302 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:35:20,756 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:36:51,751 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:36:51,955 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:36:52,785 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:36:52,799 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:36:55,449 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:36:55,666 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:37:00,042 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:37:01,047 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:37:05,063 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:38:26,006 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:38:26,362 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:38:27,022 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:38:31,025 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:39:42,514 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:43:09,479 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-19 02:43:12,016 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 02:43:12,048 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 02:43:12,052 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 02:43:12,053 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-19 02:43:12,105 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-19 02:43:12,108 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 02:43:12,183 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 02:43:12,186 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 02:43:12,432 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-19 02:43:12,433 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-19 02:43:12,433 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-19 02:43:12,442 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-19 02:43:12,443 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-19 02:43:12,445 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-19 02:43:12,705 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-19 02:43:12,706 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-19 02:43:12,706 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-19 02:43:12,706 - iot_anomaly_detection - INFO - Links: 49
+2025-06-19 02:43:12,707 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-19 02:43:12,709 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-19 02:43:12,709 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 02:43:12,732 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 02:43:12,737 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 02:43:12,737 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-19 02:43:12,738 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-19 02:43:12,754 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:43:32,838 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:43:33,054 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:43:34,412 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:43:38,106 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:44:08,211 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:44:09,419 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:44:13,240 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:45:02,556 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:45:24,890 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:45:25,838 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:45:27,617 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:45:33,285 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:45:35,893 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:47:32,070 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:47:33,744 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:47:41,200 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:50:26,188 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:50:26,958 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 02:50:27,350 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:50:30,901 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:50:31,921 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 02:50:32,380 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:04,997 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:05,042 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:05,056 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:05,070 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:05,136 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:05,762 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 03:03:06,916 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 12:51:55,068 - iot_anomaly_detection - INFO - Starting IoT Anomaly Detection API on port 5000
+2025-06-19 12:52:03,560 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 12:52:03,617 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 12:52:03,630 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 12:52:03,639 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-19 12:52:03,725 - iot_anomaly_detection - INFO - Loaded configuration from C:\Users\akzho\Documents\new2\server2\config.yml
+2025-06-19 12:52:03,729 - iot_anomaly_detection - INFO - Loaded scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 12:52:03,800 - iot_anomaly_detection - INFO - Loaded Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 12:52:03,803 - iot_anomaly_detection - INFO - Loaded Local Outlier Factor model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 12:52:04,318 - iot_anomaly_detection - INFO - Authentication middleware initialized with 10 public endpoints
+2025-06-19 12:52:04,319 - iot_anomaly_detection - INFO - Authentication enabled: False
+2025-06-19 12:52:04,319 - iot_anomaly_detection - INFO - Initializing database...
+2025-06-19 12:52:04,327 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-19 12:52:04,328 - iot_anomaly_detection - INFO - Importing data to database...
+2025-06-19 12:52:04,329 - iot_anomaly_detection - INFO - Database initialized successfully
+2025-06-19 12:52:04,622 - iot_anomaly_detection - INFO - Data imported to database successfully
+2025-06-19 12:52:04,623 - iot_anomaly_detection - INFO - Devices: 49
+2025-06-19 12:52:04,623 - iot_anomaly_detection - INFO - Traffic records: 23145
+2025-06-19 12:52:04,623 - iot_anomaly_detection - INFO - Links: 49
+2025-06-19 12:52:04,624 - iot_anomaly_detection - INFO - Anomalies: 21222
+2025-06-19 12:52:04,626 - iot_anomaly_detection - INFO - Loading ML models...
+2025-06-19 12:52:04,626 - iot_anomaly_detection - INFO - Loading Isolation Forest model from C:\Users\akzho\Documents\new2\server2\models\isolation_forest.pkl
+2025-06-19 12:52:04,649 - iot_anomaly_detection - INFO - Loading LOF model from C:\Users\akzho\Documents\new2\server2\models\local_outlier_factor.pkl
+2025-06-19 12:52:04,652 - iot_anomaly_detection - INFO - Loading scaler from C:\Users\akzho\Documents\new2\server2\models\scaler.pkl
+2025-06-19 12:52:04,653 - iot_anomaly_detection - INFO - Models loaded successfully
+2025-06-19 12:52:04,653 - iot_anomaly_detection - INFO - System initialization completed
+2025-06-19 12:52:08,924 - iot_anomaly_detection - ERROR - HTTP error: Not authenticated
+2025-06-19 12:52:08,947 - iot_anomaly_detection - ERROR - JWT token validation error
+2025-06-19 12:52:08,947 - iot_anomaly_detection - ERROR - HTTP error: Could not validate credentials
+2025-06-19 12:52:08,948 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:52:09,215 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:52:11,818 - iot_anomaly_detection - INFO - User admin logged in
+2025-06-19 12:52:11,868 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 12:52:13,219 - iot_anomaly_detection - INFO - WebSocket connected
+2025-06-19 12:52:15,866 - iot_anomaly_detection - ERROR - Error getting model info: no such table: settings
+2025-06-19 12:52:15,867 - iot_anomaly_detection - ERROR - HTTP error: Error getting model info: no such table: settings
+2025-06-19 12:52:15,868 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:52:16,894 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 12:52:21,833 - iot_anomaly_detection - ERROR - Error initiating model retraining: no such table: settings
+2025-06-19 12:52:21,835 - iot_anomaly_detection - ERROR - HTTP error: Error initiating model retraining: no such table: settings
+2025-06-19 12:52:21,835 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:52:23,597 - iot_anomaly_detection - INFO - Anomaly detection threshold updated to 0.55
+2025-06-19 12:52:23,597 - iot_anomaly_detection - ERROR - Error updating model settings: no such table: settings
+2025-06-19 12:52:23,598 - iot_anomaly_detection - ERROR - HTTP error: Error updating model settings: no such table: settings
+2025-06-19 12:52:23,599 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:52:28,992 - iot_anomaly_detection - ERROR - Error initiating model retraining: no such table: settings
+2025-06-19 12:52:28,992 - iot_anomaly_detection - ERROR - HTTP error: Error initiating model retraining: no such table: settings
+2025-06-19 12:52:28,993 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:53:15,688 - iot_anomaly_detection - ERROR - HTTP error: Not authenticated
+2025-06-19 12:53:15,689 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
+2025-06-19 12:53:18,575 - iot_anomaly_detection - INFO - WebSocket disconnected
+2025-06-19 12:56:12,856 - iot_anomaly_detection - ERROR - Error initiating model retraining: no such table: settings
+2025-06-19 12:56:12,857 - iot_anomaly_detection - ERROR - HTTP error: Error initiating model retraining: no such table: settings
+2025-06-19 12:56:12,857 - iot_anomaly_detection - ERROR - Unhandled exception: name 'JSONResponse' is not defined
