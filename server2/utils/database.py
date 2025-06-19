@@ -115,6 +115,35 @@ def init_db():
             roles TEXT
         )
         ''')
+
+        # Create settings table to store model configuration
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS settings (
+            key TEXT PRIMARY KEY,
+            value TEXT
+        )
+        ''')
+
+        # Insert default settings if missing
+        cursor.execute("SELECT COUNT(*) as cnt FROM settings WHERE key = 'anomaly_threshold'")
+        if cursor.fetchone()["cnt"] == 0:
+            cursor.execute(
+                "INSERT INTO settings (key, value) VALUES ('anomaly_threshold', ?)",
+                ('0.7',)
+            )
+
+        cursor.execute("SELECT COUNT(*) as cnt FROM settings WHERE key = 'current_model'")
+        if cursor.fetchone()["cnt"] == 0:
+            cursor.execute(
+                "INSERT INTO settings (key, value) VALUES ('current_model', 'both')"
+            )
+
+        cursor.execute("SELECT COUNT(*) as cnt FROM settings WHERE key = 'last_model_training'")
+        if cursor.fetchone()["cnt"] == 0:
+            cursor.execute(
+                "INSERT INTO settings (key, value) VALUES ('last_model_training', ?)",
+                (datetime.now().isoformat(),)
+            )
         
         conn.commit()
 
